@@ -536,10 +536,6 @@ $texa_logo  = base_url('assets/img/logo.png');
     font-size: var(--fs-sm);
   }
   .legal-row:last-child { border-bottom: none; }
-  @media (max-width: 640px) {
-    .legal-row { flex-direction: column; align-items: flex-start; gap: 0.55rem; }
-    .legal-row .k { flex-basis: auto; }
-  }
   .legal-row .k {
     flex: 0 0 220px;
     white-space: nowrap;
@@ -569,6 +565,10 @@ $texa_logo  = base_url('assets/img/logo.png');
     border-radius: 999px;
     background: color-mix(in srgb, var(--ok) 14%, transparent);
     border: 1px solid color-mix(in srgb, var(--ok) 34%, transparent);
+  }
+  @media (max-width: 640px) {
+    .legal-row { flex-direction: column; align-items: flex-start; gap: 0.55rem; }
+    .legal-row .k { flex-basis: auto; }
   }
 
   /* ---------- Leadership ---------- */
