@@ -1,10 +1,17 @@
 RewriteEngine On
 
+# Block access to hidden files/directories (.git, .env, .htaccess, etc.)
+RewriteCond %{REQUEST_URI} (^|/)\.(?!well-known/) [NC]
+RewriteRule ^ - [F,L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteRule ^(.*)$ index.php/$1 [L]
 
-<IfModule mod_env.c>
-    SetEnv CI_ENV development
+# Marks this host as local development (index.php falls back to
+# 'production' — errors hidden — for any host that doesn't match).
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_HOST} ^(localhost|127\.0\.0\.1|.*\.(test|local|localhost))$ [NC]
+    RewriteRule ^ - [E=CI_ENV:development]
 </IfModule>

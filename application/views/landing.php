@@ -107,7 +107,8 @@ $texa_logo  = base_url('assets/img/logo.png');
   /* TEXA berkomitmen pada satu identitas gelap — tidak mengikuti preferensi terang perangkat. */
 
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body { overflow-x: hidden; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
@@ -433,6 +434,8 @@ $texa_logo  = base_url('assets/img/logo.png');
     .services-grid { grid-template-columns: 1fr; }
   }
   .service-card {
+    display: flex;
+    flex-direction: column;
     background: var(--bg-card);
     border: 1px solid var(--line);
     border-radius: var(--radius);
@@ -458,6 +461,22 @@ $texa_logo  = base_url('assets/img/logo.png');
   }
   .service-card h3 { font-size: var(--fs-lg); margin-bottom: 0.6rem; }
   .service-card p { color: var(--text-muted); font-size: var(--fs-sm); }
+  .card-wa {
+    margin-top: auto;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--line-soft);
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.15s ease, gap 0.15s ease;
+  }
+  .card-wa:hover { color: var(--accent-strong); gap: 0.6rem; }
+  .card-wa::after { content: "→"; }
 
   .sub-services-head {
     margin: var(--space-5) 0 var(--space-3);
@@ -475,6 +494,8 @@ $texa_logo  = base_url('assets/img/logo.png');
     .sub-services-grid { grid-template-columns: 1fr; }
   }
   .sub-service-card {
+    display: flex;
+    flex-direction: column;
     background: transparent;
     border: 1px solid var(--line);
     border-radius: var(--radius);
@@ -588,6 +609,15 @@ $texa_logo  = base_url('assets/img/logo.png');
     .contact-grid { grid-template-columns: 1fr; }
   }
   .contact-list { display: flex; flex-direction: column; gap: var(--space-3); }
+  .contact-map {
+    margin-top: var(--space-3);
+    aspect-ratio: 16 / 10;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg-card);
+  }
+  .contact-map iframe { display: block; }
   .contact-item .label { display: block; margin-bottom: 0.35rem; }
   .contact-item .val { font-size: var(--fs-md); }
   .contact-item a.val { text-decoration: none; }
@@ -693,7 +723,7 @@ $texa_logo  = base_url('assets/img/logo.png');
       <div class="reveal">
         <h3 class="label">Visi</h3>
         <div class="vm-visi">
-          <p>Menjadi mitra teknologi tepercaya bagi pelaku usaha di Jawa Barat, dengan aplikasi dan infrastruktur digital sebagai fondasi pertumbuhan bisnis yang berkelanjutan.</p>
+          <p>Menjadi mitra teknologi tepercaya bagi pelaku usaha di seluruh Indonesia, dengan aplikasi dan infrastruktur digital sebagai fondasi pertumbuhan bisnis yang berkelanjutan.</p>
         </div>
       </div>
       <div class="reveal">
@@ -717,7 +747,7 @@ $texa_logo  = base_url('assets/img/logo.png');
           </div>
           <div class="misi-item">
             <span class="n">05</span>
-            <p>Tumbuh bersama pelaku usaha mikro, kecil, dan menengah di Indramayu dan Jawa Barat melalui solusi teknologi yang terjangkau.</p>
+            <p>Tumbuh bersama pelaku usaha mikro, kecil, dan menengah di seluruh Indonesia melalui solusi teknologi yang terjangkau.</p>
           </div>
         </div>
       </div>
@@ -737,31 +767,37 @@ $texa_logo  = base_url('assets/img/logo.png');
           <span class="kbli">Web</span>
           <h3>Aplikasi Web Kustom</h3>
           <p>Sistem informasi, dashboard admin, dan aplikasi berbasis web yang dirancang mengikuti alur kerja bisnis Anda, bukan sebaliknya.</p>
+          <a class="card-wa" href="https://wa.me/6281356774474?text=<?php echo rawurlencode('Halo TEXA, saya ingin tanya soal layanan Aplikasi Web Kustom.'); ?>" target="_blank" rel="noopener">Tanya via WhatsApp</a>
         </div>
         <div class="service-card service-card--featured reveal">
           <span class="kbli">Bisnis</span>
           <h3>Aplikasi Bisnis &amp; ERP</h3>
           <p>Sistem billing, POS, inventori, dan manajemen operasional yang terintegrasi dalam satu platform.</p>
+          <a class="card-wa" href="https://wa.me/6281356774474?text=<?php echo rawurlencode('Halo TEXA, saya ingin tanya soal layanan Aplikasi Bisnis & ERP.'); ?>" target="_blank" rel="noopener">Tanya via WhatsApp</a>
         </div>
         <div class="service-card service-card--featured reveal">
           <span class="kbli">Mobile</span>
           <h3>Aplikasi Mobile</h3>
           <p>Aplikasi Android dan iOS untuk memperluas jangkauan layanan ke pelanggan maupun tim lapangan.</p>
+          <a class="card-wa" href="https://wa.me/6281356774474?text=<?php echo rawurlencode('Halo TEXA, saya ingin tanya soal layanan Aplikasi Mobile.'); ?>" target="_blank" rel="noopener">Tanya via WhatsApp</a>
         </div>
         <div class="service-card service-card--featured reveal">
           <span class="kbli">Integrasi</span>
           <h3>Integrasi Sistem &amp; API</h3>
           <p>Menghubungkan aplikasi Anda dengan payment gateway, layanan pihak ketiga, dan sistem yang sudah berjalan.</p>
+          <a class="card-wa" href="https://wa.me/6281356774474?text=<?php echo rawurlencode('Halo TEXA, saya ingin tanya soal layanan Integrasi Sistem & API.'); ?>" target="_blank" rel="noopener">Tanya via WhatsApp</a>
         </div>
         <div class="service-card service-card--featured reveal">
           <span class="kbli">Support</span>
           <h3>Maintenance &amp; Dukungan Teknis</h3>
           <p>Pemeliharaan, pembaruan, dan dukungan berkelanjutan pasca peluncuran aplikasi.</p>
+          <a class="card-wa" href="https://wa.me/6281356774474?text=<?php echo rawurlencode('Halo TEXA, saya ingin tanya soal layanan Maintenance & Dukungan Teknis.'); ?>" target="_blank" rel="noopener">Tanya via WhatsApp</a>
         </div>
         <div class="service-card service-card--featured reveal">
           <span class="kbli">Konsultasi</span>
           <h3>Konsultasi &amp; Arsitektur Sistem</h3>
           <p>Perencanaan teknis dari kebutuhan bisnis hingga pemilihan teknologi yang tepat sebelum pengembangan dimulai.</p>
+          <a class="card-wa" href="https://wa.me/6281356774474?text=<?php echo rawurlencode('Halo TEXA, saya ingin tanya soal layanan Konsultasi & Arsitektur Sistem.'); ?>" target="_blank" rel="noopener">Tanya via WhatsApp</a>
         </div>
       </div>
 
@@ -774,16 +810,19 @@ $texa_logo  = base_url('assets/img/logo.png');
           <span class="kbli">KBLI 46511</span>
           <h4>Distribusi Perangkat Komputer</h4>
           <p>Perdagangan besar komputer dan perlengkapan pendukungnya untuk mitra usaha dan instansi.</p>
+          <a class="card-wa" href="https://wa.me/6281356774474?text=<?php echo rawurlencode('Halo TEXA, saya ingin tanya soal layanan Distribusi Perangkat Komputer.'); ?>" target="_blank" rel="noopener">Tanya via WhatsApp</a>
         </div>
         <div class="sub-service-card reveal">
           <span class="kbli">KBLI 61100</span>
           <h4>Infrastruktur Telekomunikasi Kabel</h4>
           <p>Perencanaan dan pengelolaan jaringan telekomunikasi berbasis kabel untuk kebutuhan konektivitas.</p>
+          <a class="card-wa" href="https://wa.me/6281356774474?text=<?php echo rawurlencode('Halo TEXA, saya ingin tanya soal layanan Infrastruktur Telekomunikasi Kabel.'); ?>" target="_blank" rel="noopener">Tanya via WhatsApp</a>
         </div>
         <div class="sub-service-card reveal">
           <span class="kbli">KBLI 46523</span>
           <h4>Perdagangan Peralatan Telekomunikasi</h4>
           <p>Distribusi perangkat dan peralatan pendukung telekomunikasi untuk kebutuhan korporasi maupun personal.</p>
+          <a class="card-wa" href="https://wa.me/6281356774474?text=<?php echo rawurlencode('Halo TEXA, saya ingin tanya soal layanan Perdagangan Peralatan Telekomunikasi.'); ?>" target="_blank" rel="noopener">Tanya via WhatsApp</a>
         </div>
       </div>
     </div>
@@ -861,6 +900,18 @@ $texa_logo  = base_url('assets/img/logo.png');
             <span class="label">Email</span>
             <a class="val" href="mailto:superadmin@texamanagement.com">superadmin@texamanagement.com</a>
           </div>
+        </div>
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps?q=-6.453648,107.942803&hl=id&z=16&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokasi Kantor TEXA — Haurgeulis, Kabupaten Indramayu">
+          </iframe>
         </div>
       </div>
       <div class="contact-card reveal">

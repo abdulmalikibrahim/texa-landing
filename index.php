@@ -2,7 +2,17 @@
 /**
  * CodeIgniter front controller — TEXA landing page
  */
-	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+	if (isset($_SERVER['CI_ENV']))
+	{
+		define('ENVIRONMENT', $_SERVER['CI_ENV']);
+	}
+	else
+	{
+		// No CI_ENV set by the server — fail safe to 'production' (hide errors)
+		// unless the request is clearly local development.
+		$_host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
+		define('ENVIRONMENT', preg_match('/^(localhost|127\.0\.0\.1|.*\.(test|local|localhost))$/i', $_host) ? 'development' : 'production');
+	}
 
 switch (ENVIRONMENT)
 {
