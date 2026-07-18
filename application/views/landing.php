@@ -654,7 +654,7 @@ $texa_logo  = base_url('assets/img/logo.png');
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <header class="nav">
-  <div class="wrap nav-inner">
+  <div class="wrap nav-inner" style="padding-left:30px; padding-right:30px;">
     <a href="#top" class="brand">
       <span class="brand-logo">
         <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="TEXA — PT Technology Extraordinary Advanced Management">
