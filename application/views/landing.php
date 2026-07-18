@@ -675,7 +675,7 @@ $texa_logo  = base_url('assets/img/logo.png');
 <main id="top">
   <section class="hero">
     <canvas class="hero-canvas" id="netCanvas" aria-hidden="true"></canvas>
-    <div class="wrap hero-inner">
+    <div class="wrap hero-inner" style="padding-left:30px; padding-right:30px;">
       <div class="hero-eyebrow reveal in">
         <span class="dot"></span>
         <span class="label">PT Technology Extraordinary Advanced Management</span>
