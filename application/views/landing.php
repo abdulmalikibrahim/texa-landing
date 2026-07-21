@@ -648,6 +648,7 @@ $texa_logo  = base_url('assets/img/logo.png');
     color: var(--text-faint);
     font-family: var(--font-mono);
   }
+  .footer-inner a:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -931,6 +932,7 @@ $texa_logo  = base_url('assets/img/logo.png');
   <div class="wrap footer-inner">
     <span>© 2026 PT TECHNOLOGY EXTRAORDINARY ADVANCED MANAGEMENT</span>
     <span>NIB 1004260019382 · Kab. Indramayu, Jawa Barat</span>
+    <a href="<?php echo base_url('privacy-policy'); ?>" style="color:var(--text-faint); text-decoration:none;">Kebijakan Privasi</a>
   </div>
 </footer>
 
