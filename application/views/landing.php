@@ -35,7 +35,7 @@ $texa_logo  = base_url('assets/img/logo.png');
 <meta name="twitter:title" content="<?php echo $texa_title; ?>">
 <meta name="twitter:description" content="<?php echo $texa_desc; ?>">
 <meta name="twitter:image" content="<?php echo $texa_logo; ?>">
-<meta name="facebook-domain-verification" content="6d463bc63ysjgu1bzsiuvck11oefeg" />
+<meta name="facebook-domain-verification" content="pgf7fzr81hoyixd1g8hxw4iiz9i3vz" />
 
 <script type="application/ld+json">
 {
